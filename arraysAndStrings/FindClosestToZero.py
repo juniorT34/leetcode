@@ -31,10 +31,19 @@ Constraints:
 
 class Solution:
     def findClosestNumber(self, nums) -> int:
-        for i in range(len(nums)):
-            pass
+        closest = nums[0]
+
+        for num in nums[1:]:
+            if abs(num) < abs(closest):
+                closest = num
+            elif abs(num) == abs(closest) and num > closest:
+                closest = num
+
+        return closest
+             
+            
             
 
 
 close = Solution()
-close.findClosestNumber([2,-1,1])
+print(close.findClosestNumber([2,-1,1]))
