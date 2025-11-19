@@ -32,7 +32,16 @@ class Solution:
         for i in nums:
             if i == 0:
                 nums.remove(i)
-                count_zero = count_zero + 1
+                count_zero += 1
+        nums.extend([0] * count_zero)
+        print(nums)
+
+    def moveZeroes1(self, nums) -> None:
+        print(nums)
+        count_zero = 0
+        while 0 in nums:
+            nums.remove(0)
+            count_zero += 1
         nums.extend([0] * count_zero)
         print(nums)
 
